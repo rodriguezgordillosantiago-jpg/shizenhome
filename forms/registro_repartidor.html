@@ -1,0 +1,222 @@
+<div class="view" id="view-join-delivery">
+  <div class="join-page">
+    <div
+      class="join-left"
+      style="
+        background: linear-gradient(
+          135deg,
+          #bf360c,
+          #f57c00
+        );
+      "
+    >
+      <div
+        class="join-left-bg"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1611068562065-994ba66501ba?w=800&fit=crop&auto=format&quot;);
+        "
+      ></div>
+      <div class="join-left-content">
+        <img
+          src="../assets/logo-repartidor.png"
+          alt="Shizen"
+          class="join-left-logo"
+        />
+        <span class="join-left-badge">
+          Para repartidores
+        </span>
+        <h2>Gana dinero recorriendo la ciudad</h2>
+        <p>
+          Sé repartidor Shizen: horarios flexibles, mejores
+          tarifas y una comunidad que cuida el planeta.
+        </p>
+        <br />
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="b-icon" aria-hidden="true">
+              &#128176;
+            </div>
+            <div class="b-title">Ganancias top</div>
+            <div class="b-desc">
+              Las mejores tarifas del mercado
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="b-icon" aria-hidden="true">
+              &#128338;
+            </div>
+            <div class="b-title">Horarios libres</div>
+            <div class="b-desc">Trabaja cuando quieras</div>
+          </div>
+          <div class="benefit-card">
+            <div class="b-icon" aria-hidden="true">
+              &#128737;
+            </div>
+            <div class="b-title">Seguro incluido</div>
+            <div class="b-desc">
+              Accidentes cubiertos en cada domicilio
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="b-icon" aria-hidden="true">
+              &#128242;
+            </div>
+            <div class="b-title">App intuitiva</div>
+            <div class="b-desc">
+              Gestiona todo desde tu celular
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="join-right">
+      <div class="join-form-wrap">
+        <a class="join-back" href="../index.php">
+          ← Volver al inicio
+        </a>
+        <div class="progress-steps">
+          <div class="step-dot active" id="joinDel-dot-1">
+            1
+          </div>
+          <div class="step-line" id="joinDel-line-1"></div>
+          <div class="step-dot" id="joinDel-dot-2">2</div>
+        </div>
+        <form
+          method="post"
+          action="registro_repartidor.php"
+          enctype="multipart/form-data"
+        >
+          <h2>¡Regístrate como repartidor!</h2>
+          <p class="form-sub">
+            Es rápido, gratis y empieza hoy.
+          </p>
+          <br />
+          <div class="form-group">
+            <label> Nombre </label>
+            <input
+              class="form-input"
+              type="text"
+              name="nombre"
+              placeholder="Tu nombre"
+              pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ .'-]{2,}"
+              title="Ingresa tu nombre completo."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label> Apellido </label>
+            <input
+              class="form-input"
+              type="text"
+              name="apellido"
+              placeholder="Tu apellido"
+              pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ .'-]{2,}"
+              title="Ingresa tu apellido completo."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label> Vehículo </label>
+            <select
+              class="form-input"
+              name="vehiculo"
+              required
+            >
+              <option value="" selected disabled>
+                Selecciona un vehículo
+              </option>
+              <option value="Bicicleta">Bicicleta</option>
+              <option value="Moto">Moto</option>
+              <option value="Patineta electrica">
+                Patineta eléctrica
+              </option>
+              <option value="Carro">Carro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label> Dirección </label>
+            <input
+              class="form-input"
+              type="text"
+              name="direccion"
+              placeholder="Ej. Calle 123 #45-67"
+              maxlength="150"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label> Email </label>
+            <input
+              class="form-input"
+              type="email"
+              name="email"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input
+              class="form-input"
+              type="password"
+              name="password"
+              autocomplete="new-password"
+              minlength="8"
+            />
+          </div>
+          <div class="form-group">
+            <label>Confirmar contraseña</label>
+            <input
+              class="form-input"
+              type="password"
+              name="password_confirmation"
+              autocomplete="new-password"
+              minlength="8"
+            />
+          </div>
+          <div id="joinDel-step2">
+            <h2>Casi listo</h2>
+            <br />
+            <br />
+            <p class="form-sub">
+              En el siguiente paso podrás adjuntar tus
+              documentos.
+            </p>
+          </div>
+          <br />
+          <div class="terms-check">
+            <input
+              type="checkbox"
+              id="termsDel"
+              name="terminos"
+              value="aceptado"
+              required
+            />
+            <label for="termsDel">
+              Acepto los términos y condiciones de Shizen y
+              la política de privacidad.
+            </label>
+          </div>
+          <button class="btn-primary-full" type="submit">
+            Continuar
+          </button>
+        </form>
+        <div
+          id="joinDel-success"
+          class="success-state hidden"
+        >
+          <div class="success-icon" aria-hidden="true">
+            &#127881;
+          </div>
+          <h3>
+            Ya eres parte del equipo de repartidores Shizen
+          </h3>
+          <p>¡Bienvenido a la familia Shizen!</p>
+          <a class="btn-primary-full" href="../index.php">
+            Volver al inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

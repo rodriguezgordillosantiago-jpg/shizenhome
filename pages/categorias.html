@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Categorías | Shizen</title>
+    <base href="../" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="css/pages.css?v=20260816-1"
+    />
+    <link
+      rel="stylesheet"
+      href="css/modals.css?v=20260816-2"
+    />
+  </head>
+  <body>
+    <header id="navigation"></header>
+    <main id="app-content">
+      <section class="cat-page">
+        <div class="cat-hero" id="catHero">
+          <div class="cat-hero-overlay"></div>
+          <button
+            class="cat-hero-back"
+            onclick="window.location.href = '../index.php'"
+            aria-label="Volver"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div class="cat-hero-info">
+            <div class="cat-hero-icon-name">
+              <span
+                class="cat-hero-icon"
+                id="catIcon"
+              ></span
+              ><span
+                class="cat-hero-name"
+                id="catName"
+              ></span>
+            </div>
+            <p class="cat-hero-desc" id="catDesc"></p>
+          </div>
+        </div>
+        <div class="cat-filter-bar">
+          <span>Ordenar por:</span
+          ><select class="sort-select">
+            <option>Relevancia</option>
+            <option>Precio: menor</option>
+            <option>Precio: mayor</option>
+            <option>Calificación</option>
+            <option>Tiempo</option>
+          </select>
+        </div>
+        <div class="cat-items-inner">
+          <div class="items-grid" id="itemsGrid"></div>
+        </div>
+      </section>
+    </main>
+    <div id="overlays"></div>
+    <script src="js/data.js"></script>
+    <script src="js/layout.js?v=20260816-2"></script>
+    <script src="js/app.js?v=20260816-4"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+/*
+  REGISTRO DE REPARTIDOR
+  HTML: forms/registro_repartidor.html
+  Foto, cedula, SOAT, tarjeta de propiedad y licencia.
+*/
+
+/* Carnet completo: modifica padding, borde, fondo y sombra aqui. */
+.delivery-documents {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 16px 18px;
+  align-items: start;
+  margin-bottom: 22px;
+  padding: 20px;
+  border: 1px solid #c9dfcb;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    #f8fdf8 0%,
+    #ffffff 65%
+  );
+  box-shadow: 0 4px 14px rgba(31, 80, 35, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+.delivery-documents::before {
+  content: "SHIZEN - REPARTIDOR";
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 6px 20px;
+  background: #ff9100;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.document-photo,
+.document-fields {
+  margin-top: 22px;
+}
+.photo-upload-input,
+.document-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+/* Foto del carnet: cambia width/height y borde aqui. */
+.document-circle {
+  width: 112px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #2d6a31;
+  border-radius: 8px;
+  background: #f1faf2;
+  color: #2d6a31;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+.document-photo-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.document-fields h3 {
+  margin: 5px 0 14px;
+  color: #1b3a1d;
+  font-size: 1.05rem;
+}
+.cedula-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 105px;
+  gap: 10px;
+  align-items: end;
+}
+.cedula-row .form-group,
+.document-uploads .form-group {
+  margin: 0;
+  min-width: 0;
+}
+.cedula-row .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.cedula-row .form-group > label:first-child {
+  display: flex;
+  align-items: center;
+  min-height: 20px;
+  margin-bottom: 6px;
+}
+.cedula-row .form-input {
+  height: 41px;
+}
+.cedula-file-group .document-file-button {
+  justify-content: center;
+  height: 41px;
+  min-height: 41px;
+  padding: 8px;
+  border-color: #2d6a31;
+  background: #2d6a31;
+  color: #fff;
+  box-shadow: none;
+}
+.cedula-pdf-button::before {
+  display: none;
+}
+.cedula-pdf-button svg {
+  width: 20px;
+  height: 20px;
+}
+.cedula-file-group .document-file-button:hover {
+  background: #1f5324;
+  color: #fff;
+}
+.document-uploads {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #d8e9d9;
+}
+.document-uploads .form-group label {
+  min-height: 32px;
+  color: #2b5430;
+  font-size: 0.78rem;
+}
+/* Botones para subir los documentos del repartidor. */
+.document-file-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 43px;
+  padding: 9px 11px;
+  border: 1px solid #3a8c3f;
+  border-radius: 8px;
+  background: #2d6a31;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.document-file-button::before {
+  content: "↑";
+  margin-right: 8px;
+}
+.document-file-button:hover {
+  background: #3a8c3f;
+  color: #fff;
+}
+@media (max-width: 480px) {
+  .delivery-documents {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+  .document-circle {
+    width: 82px;
+    height: 82px;
+  }
+  .cedula-row,
+  .document-uploads {
+    grid-template-columns: 1fr;
+  }
+}

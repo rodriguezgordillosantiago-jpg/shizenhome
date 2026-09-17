@@ -1,0 +1,16 @@
+/*
+  REGISTRO DE NEGOCIO
+  HTML: forms/registro_negocio.html
+  Este archivo contiene los estilos exclusivos del negocio.
+*/
+
+/* Horarios de apertura y cierre. Cambia columnas o separacion aqui. */
+.business-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .business-hours { grid-template-columns: 1fr; gap: 0; }
+}

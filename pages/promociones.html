@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Promociones | Shizen</title>
+    <base href="../" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="css/pages.css?v=20260816-1"
+    />
+    <link
+      rel="stylesheet"
+      href="css/modals.css?v=20260816-2"
+    />
+  </head>
+  <body>
+    <header id="navigation"></header>
+    <main id="app-content">
+      <section class="promos-page">
+        <div class="page-header">
+          <button
+            class="btn-back"
+            onclick="window.location.href = 'index.php'"
+            aria-label="Volver"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div>
+            <h2>Promociones</h2>
+            <p>
+              Descuentos exclusivos en restaurantes veganos
+            </p>
+          </div>
+        </div>
+        <div class="promos-inner">
+          <div
+            class="filter-tabs"
+            id="promoFilterTabs"
+          ></div>
+          <div class="promos-grid" id="promosGrid"></div>
+        </div>
+      </section>
+    </main>
+    <div id="overlays"></div>
+    <script src="js/data.js"></script>
+    <script src="js/layout.js?v=20260816-2"></script>
+    <script src="js/app.js?v=20260816-4"></script>
+  </body>
+</html>

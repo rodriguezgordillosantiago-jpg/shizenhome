@@ -1,0 +1,13 @@
+.search-page { max-width: 1000px; margin: 0 auto; padding: 55px 22px; }
+.search-page h1 { color: #1b3a1d; font-size: 2rem; }
+.search-page-sub { color: #68756a; margin: 10px 0 28px; }
+.search-section-title { color: #2d6a31; font-size: 1.15rem; margin: 24px 0 12px; }
+.search-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.search-result-card { display: flex; align-items: center; gap: 14px; padding: 20px; color: #1b3a1d; text-decoration: none; border: 1px solid #dceedd; border-radius: 16px; background: #fff; box-shadow: 0 5px 18px rgba(45,106,49,.08); }
+.search-result-card:hover { border-color: #72b875; transform: translateY(-2px); }
+.search-result-icon { font-size: 2rem; }
+.search-result-image { width: 76px; height: 76px; flex: 0 0 76px; border-radius: 12px; object-fit: cover; background: #e8f5e9; }
+.search-result-content { min-width: 0; }
+.search-result-card small { display: block; margin-top: 5px; color: #718071; }
+.search-result-card em { display: block; margin-top: 6px; color: #68756a; font-size: .82rem; line-height: 1.35; font-style: normal; }
+.search-empty { padding: 28px; border-radius: 14px; background: #f0faf0; color: #527054; }
