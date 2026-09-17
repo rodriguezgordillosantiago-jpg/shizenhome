@@ -158,7 +158,7 @@ function getActivePromosList() {
         var foundCat = CATEGORIES.find(function (c) {
           return c.dbId === Number(item.id_categoria);
         });
-        if (foundCat) catName = foundCat.name;
+        if (foundCat) catName = foundCat.label || foundCat.nombre || foundCat.name || "Todos";
       }
       var discPct = 0;
       var normalPrice = parseFloat(item.precio) || 0;
