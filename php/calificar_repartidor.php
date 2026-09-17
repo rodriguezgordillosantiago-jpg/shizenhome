@@ -12,7 +12,7 @@ $stmt = $pdo->prepare(
      FROM pedido p
      JOIN compra c ON c.id_pedido = p.id_pedido
      JOIN entrega e ON e.id_compra = c.id_compra
-     WHERE p.id_pedido=? AND p.id_usuario=? AND p.estado='Recibido'
+     WHERE p.id_pedido=? AND p.id_usuario=? AND p.estado IN ('Recibido', 'Entregado')
        AND e.fecha_confirmacion IS NOT NULL"
 );
 $stmt->execute([$id, (int)$_SESSION['id_usuario']]);
