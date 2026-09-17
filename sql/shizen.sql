@@ -210,3 +210,65 @@ INSERT INTO menu_items (id_menu_item, id_negocio, id_categoria, nombre, descripc
 (45, 2, 5, 'Chocolate Caliente Vegano', 'Chocolate caliente con leche de avena', 7000, '../Imagenes_prueba/bebida8.jpg', 1, NULL),
 (48, 2, 1, 'hamburguesa', 'rica hamburguesa', 13000, '/shizen-home/public/images/catalogo/Imagenes_prueba/producto_1789620142_f18bdb96.jpg', 0, NULL)
 ON DUPLICATE KEY UPDATE id_negocio=VALUES(id_negocio), nombre=VALUES(nombre), precio=VALUES(precio);
+
+-- === SEED DATA FOR 2 BUSINESSES AND 46 DISHES ===
+INSERT INTO usuario (id_usuario, nombre, apellido, direccion, email, password_hash, rol, ciudad, id_cocina_negocio_asociado) VALUES
+(4, 'Carlos', 'Mendoza', 'Calle 45 #7-12, Bogotá', 'contacto@veganocentral.com', '$2y$10$h7V/7V0m764hR1aHkS4MGeB17Jd5o1A1l/06.f4e4W/m.g4s.m.l.', 'Negocio', 'Chapinero', NULL),
+(5, 'Laura', 'Gómez', 'Carrera 13 #58-30, Bogotá', 'contacto@ecomarketchapinero.com', '$2y$10$h7V/7V0m764hR1aHkS4MGeB17Jd5o1A1l/06.f4e4W/m.g4s.m.l.', 'Negocio', 'Chapinero', NULL),
+(15, 'Andrés', 'Molina', 'Calle 45 #7-12, Bogotá', 'cocina1@shizen.com', '$2y$10$h7V/7V0m764hR1aHkS4MGeB17Jd5o1A1l/06.f4e4W/m.g4s.m.l.', 'Cocina', 'Chapinero', 1),
+(16, 'Laura', 'Vega', 'Carrera 13 #58-30, Bogotá', 'cocina2@shizen.com', '$2y$10$h7V/7V0m764hR1aHkS4MGeB17Jd5o1A1l/06.f4e4W/m.g4s.m.l.', 'Cocina', 'Chapinero', 2)
+ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), email=VALUES(email);
+
+INSERT INTO negocios (id_negocio, id_usuario, gmail_negocio, nombre, direccion, cedula, hora_apertura, hora_cierre, logo_url, rut_url, documento_identidad_representante_url, certificado_bancario_url, certificado_camara_comercio_url) VALUES
+(1, 4, 'contacto@veganocentral.com', 'Restaurante Vegano Central', 'Calle 45 #7-12, Bogotá', '1010203040', '08:00:00', '22:00:00', '../Imagenes_prueba/logo.jpg', 'legales/negocio/negocio_1010203040/rut_1010203040.pdf', 'legales/negocio/negocio_1010203040/doc_representante_1010203040.pdf', 'legales/negocio/negocio_1010203040/cert_bancario_1010203040.pdf', 'legales/negocio/negocio_1010203040/camara_comercio_1010203040.pdf'),
+(2, 5, 'contacto@ecomarketchapinero.com', 'Eco Market Chapinero', 'Carrera 13 #58-30, Bogotá', '1020304050', '08:00:00', '22:00:00', '../Imagenes_prueba/logo2.jpg', 'legales/negocio/negocio_1020304050/rut_1020304050.pdf', 'legales/negocio/negocio_1020304050/doc_representante_1020304050.pdf', 'legales/negocio/negocio_1020304050/cert_bancario_1020304050.pdf', 'legales/negocio/negocio_1020304050/camara_comercio_1020304050.pdf')
+ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), id_usuario=VALUES(id_usuario);
+
+INSERT INTO menu_items (id_menu_item, id_negocio, id_categoria, nombre, descripcion, precio, imagen_url, on_promo, precio_promocion) VALUES
+(1, 1, 3, 'Bowl Saludable', 'Bowl saludable con quinoa, aguacate, vegetales frescos, semillas, jugo de lim¾n y aderezo de hierbas. Una opci¾n equilibrada, colorida y llena de sabor para quienes buscan una comida nutritiva, ligera y satisfactoria a cualquier hora del dÝa.', 10000, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400', 0, NULL),
+(2, 1, 3, 'Ensalada César', 'Lechuga, pollo, crutones y aderezo césar', 15000, 'https://images.unsplash.com/photo-1707603571504-86c1ea50903e?w=400', 0, NULL),
+(3, 1, 1, 'Hamburguesa Vegana', 'Deliciosa Hamburguesa (Plant-Bassed)', 25000, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400', 0, NULL),
+(4, 1, 3, 'Bowl de Quinoa', 'Descripción pendiente por definir', 18000, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400', 0, NULL),
+(5, 1, 1, 'Tacos de Jackfruit', 'Deliciosos Tacos a base de frutas', 22500, 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400', 0, NULL),
+(6, 1, 1, '2x1 en pizza mediana', 'Válido solo los martes, no acumulable con otras promociones', 15000, '../Imagenes_prueba/pizzavegana.jpg', 0, NULL),
+(7, 1, 1, 'Wrap de Falafel', 'Falafel casero con vegetales y salsa tahini', 18000, '../Imagenes_prueba/plato1.jpg', 0, NULL),
+(8, 1, 2, 'Lasaña de Berenjena', 'Capas de berenjena, salsa napolitana y queso vegano', 28000, '../Imagenes_prueba/plato6.jpg', 0, NULL),
+(9, 1, 4, 'Brownie Vegano', 'Brownie de chocolate 100% sin lácteos ni huevo', 9000, '../Imagenes_prueba/postre1.jpg', 0, NULL),
+(10, 1, 5, 'Limonada de Coco', 'Limonada natural con leche de coco', 8000, '../Imagenes_prueba/bebida1.jpg', 0, NULL),
+(11, 1, 6, 'Granola Bowl', 'Granola casera, frutas frescas y yogurt vegetal', 12000, '../Imagenes_prueba/desayuno6.jpg', 0, NULL),
+(12, 1, 5, 'Jugo Verde Detox', 'Espinaca, apio, manzana verde y limón', 9000, '../Imagenes_prueba/bebida2.jpg', 0, NULL),
+(13, 1, 7, 'Mix de Frutos Secos', 'Almendras, nueces, pasas y semillas', 7000, '../Imagenes_prueba/snack1.jpg', 0, NULL),
+(14, 1, 3, 'Ensalada Mediterránea', 'Hummus, garbanzos, tomate y aceitunas', 16000, '../Imagenes_prueba/desayuno1.jpg', 0, NULL),
+(15, 1, 3, 'Ensalada Kale & Aguacate', 'Kale, aguacate, quinoa y vinagreta de limón', 17000, '../Imagenes_prueba/desayuno2.jpg', 0, NULL),
+(16, 1, 3, 'Bowl Buddha', 'Vegetales asados, garbanzos y tahini', 19000, '../Imagenes_prueba/desayuno3.jpg', 0, NULL),
+(17, 1, 5, 'Smoothie Verde', 'Espinaca, piña y jengibre', 10000, '../Imagenes_prueba/bebida3.jpg', 0, NULL),
+(18, 1, 6, 'Tostada de Aguacate', 'Pan integral, aguacate y semillas', 11000, '../Imagenes_prueba/desayuno7.jpg', 0, NULL),
+(19, 1, 2, 'Pasta Vegana Alfredo', 'Pasta con salsa cremosa a base de anacardos', 24000, '../Imagenes_prueba/plato7.jpg', 0, NULL),
+(20, 1, 4, 'Cheesecake Vegano', 'Cheesecake sin lácteos con frutos rojos', 10000, '../Imagenes_prueba/postre2.jpg', 0, NULL),
+(21, 1, 5, 'Té Helado de Frutos Rojos', 'Té frío natural con frutos rojos', 7000, '../Imagenes_prueba/bebida4.jpg', 0, NULL),
+(22, 1, 2, 'Cazuela de Mariscos', 'Cazuela criolla con camarón, mejillón y pescado', 32000, '../Imagenes_prueba/plato8.jpg', 0, NULL),
+(23, 1, 1, 'Ceviche de Camarón', 'Ceviche fresco estilo costa pacífica', 26000, '../Imagenes_prueba/plato2.jpg', 0, NULL),
+(24, 2, 2, 'Arroz con Coco y Camarón', 'Arroz de coco tradicional con camarón salteado', 28000, '../Imagenes_prueba/plato9.jpg', 0, NULL),
+(25, 2, 7, 'Patacones con Camarón', 'Patacones crocantes con camarón al ajillo', 18000, '../Imagenes_prueba/snack2.jpg', 0, NULL),
+(26, 2, 5, 'Jugo de Maracuyá', 'Jugo natural de maracuyá', 8000, '../Imagenes_prueba/bebida5.jpg', 0, NULL),
+(27, 2, 1, 'Rollo California', 'Cangrejo, aguacate y pepino', 22000, '../Imagenes_prueba/plato3.jpg', 0, NULL),
+(28, 2, 2, 'Rollo Sakura Especial', 'Salmón, queso crema y cebollín crocante', 27000, '../Imagenes_prueba/DonCamaronplato.jpg', 0, NULL),
+(29, 2, 2, 'Sashimi Mixto', 'Selección de pescados frescos del día', 30000, '../Imagenes_prueba/veganrestaurantplato.jpg', 0, NULL),
+(30, 2, 7, 'Gyozas', 'Empanadillas japonesas al vapor', 14000, '../Imagenes_prueba/snack3.jpg', 0, NULL),
+(31, 2, 5, 'Té Verde Frío', 'Té verde japonés servido frío', 6000, '../Imagenes_prueba/bebida6.jpg', 0, NULL),
+(32, 2, 1, 'Pizza Margarita Vegana', 'Salsa napolitana, mozzarella vegana y albahaca', 24000, '../Imagenes_prueba/plato4.jpg', 0, NULL),
+(33, 2, 1, 'Pizza Hawaiana Vegana', 'Piña, jamón vegetal y mozzarella vegana', 26000, '../Imagenes_prueba/plato5.jpg', 1, NULL),
+(34, 2, 2, 'Calzone Vegetariano', 'Calzone relleno de vegetales y queso', 23000, '../Imagenes_prueba/sushisakura.jpg', 0, NULL),
+(35, 2, 4, 'Tiramisú Vegano', 'Tiramisú clásico sin lácteos ni huevo', 11000, '../Imagenes_prueba/postre3.jpg', 0, NULL),
+(36, 2, 3, 'Bowl Energético', 'Quinoa, garbanzo, aguacate y semillas', 17000, '../Imagenes_prueba/desayuno4.jpg', 0, NULL),
+(37, 2, 3, 'Bowl Tropical', 'Mango, piña, coco y granola', 18000, '../Imagenes_prueba/desayuno5.jpg', 0, NULL),
+(38, 2, 3, 'Bowl Proteico', 'Tofu marinado, arroz integral y vegetales', 19000, '../Imagenes_prueba/snack6.jpg', 0, NULL),
+(39, 2, 5, 'Smoothie de Mango', 'Mango, banano y leche de almendras', 9000, '../Imagenes_prueba/bebida7.jpg', 0, NULL),
+(40, 2, 7, 'Chips de Plátano', 'Chips horneados de plátano verde', 6000, '../Imagenes_prueba/snack4.png', 0, NULL),
+(41, 2, 4, 'Brownie sin Gluten', 'Brownie de chocolate apto para celíacos', 9000, '../Imagenes_prueba/postre4.jpg', 0, NULL),
+(42, 2, 4, 'Cheesecake de Maracuyá', 'Cheesecake vegano con coulis de maracuyá', 11000, '../Imagenes_prueba/postre5.jpg', 0, NULL),
+(43, 2, 7, 'Galletas de Avena', 'Galletas de avena y pasas sin lácteos', 6000, '../Imagenes_prueba/snack5.png', 0, NULL),
+(44, 2, 4, 'Torta de Zanahoria Vegana', 'Torta húmeda de zanahoria con frosting vegano', 12000, '../Imagenes_prueba/postre6.jpg', 0, NULL),
+(45, 2, 5, 'Chocolate Caliente Vegano', 'Chocolate caliente con leche de avena', 7000, '../Imagenes_prueba/bebida8.jpg', 1, NULL),
+(48, 2, 1, 'hamburguesa', 'rica hamburguesa', 13000, '/shizen-home/public/images/catalogo/Imagenes_prueba/producto_1789620142_f18bdb96.jpg', 0, NULL)
+ON DUPLICATE KEY UPDATE id_negocio=VALUES(id_negocio), nombre=VALUES(nombre), precio=VALUES(precio);
