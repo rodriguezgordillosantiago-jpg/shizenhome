@@ -13,12 +13,13 @@ function formatTime(secs) {
 }
 
 function startCountdowns() {
-  if (typeof ALL_PROMOS === "undefined") return;
-  ALL_PROMOS.forEach(function (p) {
+  var list = getActivePromosList();
+  if (!list || list.length === 0) return;
+  list.forEach(function (p) {
     countdowns[p.id] = p.endsIn;
   });
   setInterval(function () {
-    ALL_PROMOS.forEach(function (p) {
+    list.forEach(function (p) {
       if (countdowns[p.id] > 0) {
         countdowns[p.id]--;
         var el = document.getElementById("timer-" + p.id);
@@ -158,7 +159,12 @@ function getActivePromosList() {
         var foundCat = CATEGORIES.find(function (c) {
           return c.dbId === Number(item.id_categoria);
         });
-        if (foundCat) catName = foundCat.label || foundCat.nombre || foundCat.name || "Todos";
+        if (foundCat)
+          catName =
+            foundCat.label ||
+            foundCat.nombre ||
+            foundCat.name ||
+            "Todos";
       }
       var discPct = 0;
       var normalPrice = parseFloat(item.precio) || 0;
@@ -194,7 +200,7 @@ function getActivePromosList() {
       };
     });
   }
-  return ALL_PROMOS;
+  return [];
 }
 
 function renderPromos() {
@@ -202,6 +208,10 @@ function renderPromos() {
   if (!grid) return;
   grid.innerHTML = "";
   var list = getActivePromosList();
+  if (!list || list.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:48px 20px;color:#6b7280"><p style="font-size:16px;font-weight:600">No hay promociones activas en este momento.</p></div>';
+    return;
+  }
   list.forEach(function (p) {
     var div = document.createElement("div");
     div.className = "promo-card";
