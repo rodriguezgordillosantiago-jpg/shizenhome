@@ -69,17 +69,17 @@
             <?php if ($esMotorizado): ?>
             <div class="document-upload-item">
               <span>Licencia de conducción</span>
-              <input class="upload-hidden-input" id="licencia" type="file" name="licencia_conduccion" accept="application/pdf" required />
+              <input class="upload-hidden-input" id="licencia" type="file" name="licencia_conduccion" accept="application/pdf" <?= $esMotorizado ? 'required' : '' ?> />
               <label class="upload-pdf-button" for="licencia" id="licencia-label">📄 Licencia</label>
             </div>
             <div class="document-upload-item">
               <span>Tarjeta de propiedad</span>
-              <input class="upload-hidden-input" id="tarjeta" type="file" name="tarjeta_propiedad" accept="application/pdf" required />
+              <input class="upload-hidden-input" id="tarjeta" type="file" name="tarjeta_propiedad" accept="application/pdf" <?= $esMotorizado ? 'required' : '' ?> />
               <label class="upload-pdf-button" for="tarjeta" id="tarjeta-label">📄 Tarjeta</label>
             </div>
             <div class="document-upload-item">
               <span>SOAT vigente</span>
-              <input class="upload-hidden-input" id="soat" type="file" name="soat" accept="application/pdf" required />
+              <input class="upload-hidden-input" id="soat" type="file" name="soat" accept="application/pdf" <?= $esMotorizado ? 'required' : '' ?> />
               <label class="upload-pdf-button" for="soat" id="soat-label">📄 SOAT</label>
             </div>
             <?php endif; ?>

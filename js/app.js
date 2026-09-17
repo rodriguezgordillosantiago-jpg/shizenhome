@@ -209,7 +209,8 @@ function renderPromos() {
   grid.innerHTML = "";
   var list = getActivePromosList();
   if (!list || list.length === 0) {
-    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:48px 20px;color:#6b7280"><p style="font-size:16px;font-weight:600">No hay promociones activas en este momento.</p></div>';
+    grid.innerHTML =
+      '<div style="grid-column:1/-1;text-align:center;padding:48px 20px;color:#6b7280"><p style="font-size:16px;font-weight:600">No hay promociones activas en este momento.</p></div>';
     return;
   }
   list.forEach(function (p) {
